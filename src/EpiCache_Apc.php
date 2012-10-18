@@ -28,7 +28,7 @@ class EpiCache_Apc extends EpiCache
     }
   }
 
-  public function set($key = null, $value = null, $expiry)
+  public function set($key = null, $value = null, $expiry = null)
   {
     if(empty($expiry)) {
       $expiry = $this->expiry;
