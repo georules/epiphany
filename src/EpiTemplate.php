@@ -16,7 +16,7 @@ class EpiTemplate
     {
       extract($vars);
     }
-    $templateInclude = Epi::getPath('view') . '/' . $template;
+    $templateInclude = Epi::getPath('view') . DIRECTORY_SEPARATOR . $template;
     if(is_file($templateInclude))
     {
       include $templateInclude;
@@ -41,7 +41,7 @@ class EpiTemplate
    */
   public function get($template = null, $vars = null)
   {
-    $templateInclude = Epi::getPath('view') . '/' . $template;
+    $templateInclude = Epi::getPath('view') . DIRECTORY_SEPARATOR . $template;
     if(is_file($templateInclude))
     {
       if(is_array($vars))

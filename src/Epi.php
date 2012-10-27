@@ -65,7 +65,7 @@ class Epi
     if(!is_array($value))
     {
       if(!isset(self::$included[$value]))
-        include(self::getPath('base') . "/{$value}");
+        include(self::getPath('base') . DIRECTORY_SEPARATOR . "{$value}");
       self::$included[$value] = 1;
     }
     else

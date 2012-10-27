@@ -19,7 +19,7 @@ class EpiCache
       return self::$instances[$hash];
 
     $type = array_shift($params);
-    if(!file_exists($file = dirname(__FILE__) . "/{$type}.php"))
+    if(!file_exists($file = dirname(__FILE__) . DIRECTORY_SEPARATOR . "{$type}.php"))
       EpiException::raise(EpiCacheTypeDoesNotExistException("EpiCache type does not exist: ({$type}).  Tried loading {$file}", 404));
 
     require_once $file;

@@ -94,7 +94,7 @@ class EpiRoute
    */
   public function load($file)
   {
-    $file = Epi::getPath('config') . "/{$file}";
+    $file = Epi::getPath('config') . DIRECTORY_SEPARATOR . "{$file}";
     if(!file_exists($file))
     {
       EpiException::raise(new EpiException("Config file ({$file}) does not exist"));
