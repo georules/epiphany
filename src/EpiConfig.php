@@ -14,8 +14,8 @@ class EpiConfig
     foreach($args as $file)
     {
       // Prepend config directory if the path doesn't start with . or /
-      if($file[0] != '.' && $file[0] != '/')
-        $file = Epi::getPath('config') . "/{$file}";
+      if($file[0] != '.' && $file[0] != DIRECTORY_SEPARATOR)
+        $file = Epi::getPath('config') . DIRECTORY_SEPARATOR . "{$file}";
 
       if(!file_exists($file))
       {
