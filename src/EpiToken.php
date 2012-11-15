@@ -1,4 +1,12 @@
 <?php
+/** 
+  * EpiToken - for CSRF prevention and prevention of form resubmissions
+  * 
+  * Implementation based on https://www.owasp.org/index.php/PHP_CSRF_Guard
+  * @author Geoffery Miller <geoffery.miller@gmail.com>
+  * @version 1.0
+  * @package EpiCode
+  */
 class EpiToken
 {
 	private static $fieldname = "nonce-name";
