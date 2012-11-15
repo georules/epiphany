@@ -6,7 +6,7 @@ Token
 
 ### Understanding and using the token module
 
-EpiToken provides an easy solution for prevention of cross-site request fraud (CSRF) and accidental form resubmission.  It depends on EpiSession to store a randomly generated token that can be placed on a POST form to syncronously verify a POST request. 
+EpiToken provides an easy solution for prevention of cross-site request forgery (CSRF) and accidental form resubmission.  It depends on EpiSession to store a randomly generated token that can be placed on a POST form to syncronously verify a POST request. 
 
     Epi::init('token');
 
