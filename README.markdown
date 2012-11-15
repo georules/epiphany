@@ -77,3 +77,4 @@ Get in touch with the authors if you have suggestions or questions.
 [database]: https://github.com/jmathai/epiphany/blob/master/docs/Database.markdown
 [cache]: https://github.com/jmathai/epiphany/blob/master/docs/Cache.markdown
 [config]: https://github.com/jmathai/epiphany/blob/master/docs/Config.markdown
+[token]: https://github.com/georules/epiphany/blob/csrf/docs/Token.markdown

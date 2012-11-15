@@ -1,4 +1,4 @@
-Cache
+Token
 =======================
 #### The Epiphany PHP Framework
 
