@@ -33,7 +33,8 @@ Read documentation on the individual modules available in Epiphany.
 4. [Database][database] - A simple interface to PDO's MySql driver.
 5. [Cache][cache] - A easy caching library which supports APC and Memcached.
 6. [Config][config] - An ini based configuration library that supports overloading.
-7. [Token][token] - Simple request validation using sessions.  Can help prevent CSRF and accidental request resubmissions.
+7. [Token][token] - Simple request validation using sessions.
+
 ----------------------------------------
 
 
