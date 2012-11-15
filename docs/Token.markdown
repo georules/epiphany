@@ -34,7 +34,7 @@ The token will be invalidated when the form is validated.  This will prevent an 
 
     $t = getToken()->addToken(false);
     $token_key = $t['name'];
-    $token_value = $t['value'];
+    $token_value = $t['token'];
 
 You can manually generate a token and validate it providing a name (key) for that token.
 
