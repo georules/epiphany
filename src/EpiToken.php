@@ -12,28 +12,36 @@ class EpiToken
 	public function validateToken($tokenName, $tokenValue)	{
 		$token = getSession()->get($tokenName);
 		$result = false;
-		if (($token === false) || ($token == $tokenValue))	{
+		if ($token == $tokenValue)	{
 			$result = true;
+			getSession()->set($tokenName,null);
 		}
 		return $result;
 	}
 	public function validateForm($form)	{
-		$name = $form[$fieldname];
-		$token = $form[$fieldtoken];
-		return validateToken($name, $token);
+		$fname = self::$fieldname;
+		$ftoken = self::$fieldtoken;
+		if (empty($form[$fname]) || empty($form[$ftoken]) )
+			return false;
+		$name = $form[$fname];
+		$token = $form[$ftoken];
+		return $this->validateToken($name, $token);
 	}
 	public function addToken($e = true)	{
 		$name = null;
 		while(!isset($name))	{
 			$name = "token_" . mt_rand(0,mt_getrandmax());
-			if(isset(getSession()->get($name))	{
+			$check = getSession()->get($name);
+			if(!isset($check))	{
 				$name = null;
 			}
 		}
-		$token = $this->generateToken($tokenName);
+		$token = $this->generateToken($name);
 		if ($e) {
-			echo "<input type=\"hidden\" name=\"$fieldname\" value=\"$name\"/>";
-			echo "<input type=\"hidden\" name=\"$fieldtoken\" value=\"$token\"/>";
+			$fname = self::$fieldname;
+			$ftoken = self::$fieldtoken;
+			echo "<input type=\"hidden\" name=\"$fname\" value=\"$name\"/>";
+			echo "<input type=\"hidden\" name=\"$ftoken\" value=\"$token\"/>";
 		}
 		else	{
 			$a = array("name"=>$name, "token"=>$token);
