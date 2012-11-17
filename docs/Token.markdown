@@ -12,7 +12,7 @@ EpiToken provides an easy solution for prevention of cross-site request forgery 
 
 EpiToken adds a new unique token to the session for the user everytime addToken is called.
 
-Using this resource is not RESTful, as it makes use of a server state (session token).  Maintaining  synchronous transaction tokens between transactions.
+Using this resource is not RESTful, as it makes use of a server state (session token).  Maintaining synchronous tokens between transactions is a context for the client which is stored on the server, which violates the "stateless" constraint of REST.
 
 ----------------------------------------
 
