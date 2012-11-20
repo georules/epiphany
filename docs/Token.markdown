@@ -10,7 +10,9 @@ EpiToken provides an easy solution for prevention of cross-site request forgery 
 
     Epi::init('token');
 
-EpiToken adds a new uniqu token to the session for the user everytime addToken is called.
+EpiToken adds a new unique token to the session for the user everytime addToken is called.
+
+Using this resource is not RESTful, as it makes use of a server state (session token).  Maintaining synchronous tokens between transactions is a context for the client stored on the server, which violates the "stateless" constraint of REST.
 
 ----------------------------------------
 
