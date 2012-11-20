@@ -9,6 +9,12 @@
   */
 class EpiToken
 {
+	const COOKIE_METHOD = 'EpiToken_Cookie';
+	const SINGLE_SESSION = 'EpiToken_SingleSession';
+	const MULTIPLE_SESSION = 'EpiToken_MultipleSesson';
+
+	private static $employ = self::COOKIE_METHOD;
+
 	private static $fieldname = "nonce-name";
 	private static $fieldtoken = "nonce-token";
 	
@@ -56,7 +62,20 @@ class EpiToken
 			return $a;
 		}
 	}
+	public static function employ()	{
+		if (func_num_args() === 1)
+			self::$employ = func_get_arg(0);
+		return self::$employ;
+	}
 }
+
+interface EpiTokenInterface {
+	public function addToken($e = true);
+	public function validateForm($form);
+	public function validateToken($tokenName, $tokenValue);
+	public function generateToken($tokenName); 
+}
+
 function getToken()
 {
   static $token;
