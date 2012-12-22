@@ -13,7 +13,8 @@ class EpiToken
 	const SINGLE_SESSION = 'EpiToken_SingleSession';
 	const MULTIPLE_SESSION = 'EpiToken_MultipleSesson';
 
-	private static $employ = self::COOKIE_METHOD;
+	private static $employ = self::COOKIE_METHOD; // need to implement
+	// currently this code makes use of a single session token for all forms per session
 
 	private static $fieldname = "nonce-name";
 	private static $fieldtoken = "nonce-token";
