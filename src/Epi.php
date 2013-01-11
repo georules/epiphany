@@ -18,6 +18,7 @@ class Epi
     'cache-apc' => array('base', 'EpiCache.php', 'EpiCache_Apc.php'),
     'cache-memcached' => array('base', 'EpiCache.php', 'EpiCache_Memcached.php'),
     'config' => array('base', 'EpiConfig.php'),
+    'cookie' => array('base', 'EpiCookie.php', 'session'),
     'database' => array('base', 'EpiDatabase.php'),
     'debug' => array('EpiDebug.php'),
     'route'  => array('base', 'EpiRoute.php'),
