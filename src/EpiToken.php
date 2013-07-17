@@ -9,12 +9,11 @@
   */
 class EpiToken
 {
-	const COOKIE_METHOD = 'EpiToken_Cookie';
+	/* To-do: configure different ways to handle tokens
+	const SESSION_METHOD = 'EpiToken_Session';
+	const DATABASE_METHOD = 'EpiToken_Session';
 	const SINGLE_SESSION = 'EpiToken_SingleSession';
-	const MULTIPLE_SESSION = 'EpiToken_MultipleSesson';
-
-	private static $employ = self::COOKIE_METHOD; // need to implement
-	// currently this code makes use of a single session token for all forms per session
+	const MULTIPLE_SESSION = 'EpiToken_MultipleSesson';*/
 
 	private static $fieldname = "nonce-name";
 	private static $fieldtoken = "nonce-token";
@@ -62,11 +61,6 @@ class EpiToken
 			$a = array("name"=>$name, "token"=>$token);
 			return $a;
 		}
-	}
-	public static function employ()	{
-		if (func_num_args() === 1)
-			self::$employ = func_get_arg(0);
-		return self::$employ;
 	}
 }
 
