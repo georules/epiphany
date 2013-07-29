@@ -1,6 +1,15 @@
 <?php
 class EpiSession_Php implements EpiSessionInterface
 {
+  public function delete($key = null) 
+  {
+    if ($this->get($key) === false)
+      return false;
+
+    unset($_SESSION[$key]);
+    return true;
+  }
+
   public function end()
   {
     $_SESSION = array();

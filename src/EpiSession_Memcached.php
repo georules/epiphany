@@ -19,6 +19,15 @@ class EpiSession_Memcached implements EpiSessionInterface
     $this->expiry   = !empty($params[3]) ? $params[3] : 3600;
   }
 
+  public function delete($key = null)
+  {
+    if ($this->get($key) === false)
+      return false;
+    
+    unset($this->store[$key]);
+    return $this->memcached->set($this->key, $this->store);
+  }
+
   public function end()
   {
     if(!$this->connect())

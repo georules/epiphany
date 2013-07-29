@@ -29,11 +29,23 @@ To specify which session driver to use you should pass the appropriate value to 
 
 ### Available methods
 
-The available methods are `get`, `set` and `end`.
+The available methods are `get`, `set` `delete` and `end`.
+
+Get the value of a key $name:
 
     get($name);
+
+Set the key $name to $value:
+
     set($name, $value);
+
+Delete the key $name:
+
     delete($name);
+
+Remove and destroy all session variables:
+
+    end();
 
 ----------------------------------------
 

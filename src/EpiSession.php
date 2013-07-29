@@ -48,6 +48,8 @@ interface EpiSessionInterface
 {
   public function get($key = null);
   public function set($key = null, $value = null);
+  public function delete($key = null);
+  public function end();
 }
 
 if(!function_exists('getSession'))
@@ -55,7 +57,9 @@ if(!function_exists('getSession'))
   function getSession()
   {
     $employ = EpiSession::employ();
-    $class = array_shift($employ);
+    $class = "";
+    if($employ)
+      $class = array_shift($employ);
     if($employ && class_exists($class))
       return EpiSession::getInstance($class, $employ);
     elseif(class_exists(EpiSession::PHP))

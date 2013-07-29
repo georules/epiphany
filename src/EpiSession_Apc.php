@@ -4,6 +4,15 @@ class EpiSession_Apc implements EpiSessionInterface
   private $key  = null;
   private $store= null;
 
+  public function delete($key = null)
+  {
+    if($this->get($key) === false)
+      return false;
+ 
+    unset($this->store[$key]);
+    return apc_store($this->key, $this->store);
+  }
+
   public function end()
   {
     apc_delete($this->key);
